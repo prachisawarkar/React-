@@ -22,12 +22,27 @@ function tick() {
 }
 setInterval(tick, 100);
 
+// components in react
 function Welcome(props){
   return <h1>Hello, {props.name}</h1>
 }
 
 const welc = <Welcome name = 'Sara' />
 ReactDOM.render(welc, document.getElementById('component'));
+function AppTest() {
+  return(
+    <div>
+      <Welcome name = 'Sara' />
+      <Welcome name = 'Cahal' />
+      <Welcome name = 'Tana' />
+    </div>
+  );
+}
+
+ReactDOM.render( <AppTest /> , document.getElementById('component'));
+//Here we can't call like given below because its not a variable declared with const
+//Its a function.
+//ReactDOM.render( AppTest, document.getElementById('component'));
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
