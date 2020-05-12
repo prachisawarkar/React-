@@ -20,7 +20,14 @@ function tick() {
   )
   ReactDOM.render(element, document.getElementById('root'))
 }
-setInterval(tick, 1000);
+setInterval(tick, 100);
+
+function Welcome(props){
+  return <h1>Hello, {props.name}</h1>
+}
+
+const welc = <Welcome name = 'Sara' />
+ReactDOM.render(welc, document.getElementById('component'));
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
