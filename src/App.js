@@ -4,9 +4,7 @@ import './App.css';
 
 
 function App() {
-  return (
-    <h1> Hello, {formatName(user)} ! </h1>
-  );
+    return <h1>Hello {formatName(user)} !</h1>
 }
 
 function formatName (user) {
@@ -14,10 +12,8 @@ function formatName (user) {
 }
 
 const user = {
-  fname : 'Harper',
-  lname : 'Perez'
+  fname : 'Prachi',
+  lname : 'Sawarkar',
 };
-
-const element = <h1> Hello, {formatName(user)} ! </h1>;
 
 export default App;
