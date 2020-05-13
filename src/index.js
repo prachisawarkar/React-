@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Comment from './Comment';
+import ticktick from './ClassCompo_State';
 import * as serviceWorker from './serviceWorker';
 
 // Simple Component - javascript functions
