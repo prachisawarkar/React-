@@ -11,6 +11,10 @@ Five steps to convert function component into class compoennt
 5. Delete the remaining empty function declaration.
 
 */
+function FormattedDate(props) {
+    return <h2>It is { props.date.toLocaleTimeString() }</h2>;
+}
+
 class Clock extends React.Component { 
     constructor(props) {
         super(props);
@@ -41,7 +45,7 @@ class Clock extends React.Component {
         return(
             <div>
                 <h3>Hello, World! This is from State and Lifecycle.</h3>
-                <h4>It is {this.state.date.toLocaleTimeString()}.</h4>
+                <FormattedDate date = {this.state.date} />
             </div>
         );
     }
