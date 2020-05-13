@@ -12,21 +12,26 @@ Five steps to convert function component into class compoennt
 
 */
 class Clock extends React.Component { 
+    constructor(props) {
+        super(props);
+        this.state = {
+            date : new Date()
+        };
+    }
+
     render() {
         return(
             <div>
                 <h3>Hello, World! This is from State and Lifecycle.</h3>
-                <h4>It is {this.props.date.toLocaleTimeString()}.</h4>
+                <h4>It is {this.state.date.toLocaleTimeString()}.</h4>
             </div>
         );
     }
 }
 
-function ticktick() {
-    ReactDOM.render(
-        <Clock date = {new Date()} /> ,
-        document.getElementById('state_components')
-    ) ;
-}
+ReactDOM.render(
+    <Clock /> ,
+    document.getElementById('state_components')
+) ;
 
-setInterval(ticktick, 40);
+
