@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Comment from './Comment';
 import ticktick from './ClassCompo_State';
+import Toggle from './eventHandling';
 import * as serviceWorker from './serviceWorker';
 
 // Simple Component - javascript functions
