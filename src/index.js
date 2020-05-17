@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Comment from './Comment';
+import Comment from './Comment'; 
 import ticktick from './ClassCompo_State';
 import Toggle from './eventHandling';
 import * as serviceWorker from './serviceWorker';
@@ -50,14 +50,14 @@ const comment = {
   },
 };
 
-//calling the App.js file
+//calling the App.js file and all other files as well
 ReactDOM.render(
   <React.StrictMode>
     <App /> {welc} <AppTest /> <Comment
     date={comment.date}
     text={comment.text}
     author={comment.author}
-  />,
+  />
   </React.StrictMode>, 
   document.getElementById('root')
 );
