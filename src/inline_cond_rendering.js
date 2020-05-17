@@ -5,10 +5,12 @@ class LogInOut extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            messages : ['React' , 'Re:React', 'Re:Re:React']
+            messages : ['React' , 'Re:React', 'Re:Re:React'],
+            showWarning : true
         };
         this.handleLoginClick = this.handleLoginClick.bind(this);
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
+        this.handleToggleClick = this.handleToggleClick.bind(this);
     }
 
     handleLoginClick(){
@@ -23,11 +25,18 @@ class LogInOut extends React.Component {
         });
     }
 
+    handleToggleClick() {
+        this.setState(state => ({
+            showWarning : !state.showWarning
+        }));
+    }
 
     render () {
         const isLoggedIn = this.state.isLoggedIn;
         return(
             <div>
+            <WarningBanner warn = {this.state.showWarning} />
+            <button onClick = {this.handleToggleClick}> {this.state.showWarning ? 'Hide' : 'Show' }</button>
                 The user is  <b> {isLoggedIn ? 'currently' : 'not'} </b> logged in.            
                 {isLoggedIn ? <Mailbox unreadmessages = {this.state.messages} /> : '' } 
         
@@ -61,6 +70,17 @@ function LogoutButton(props) {
     return(
         <button onClick = {props.onClick} > Logout </button>
     );  
+}
+
+function WarningBanner(props) {
+    if(!props.warn) {
+        return null;
+    }
+    return (
+        <div  className = "warning">
+            Warning!
+        </div>
+    );
 }
 
 export default LogInOut;
