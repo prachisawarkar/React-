@@ -39,6 +39,52 @@ function List(props) {
 /*ReactDOM.render(
     {listItems},
     document.getElementById('root');
-)*/
+)*
+/*******************************/
+//you should keep the key on the <ListItem /> element in the array rather than on the <li> element
+function ListItem(props) {
 
-export default List;
+    return <li>{props.value}</li>
+}
+
+function NumberList(props) {
+    const numbers = props.numbers;
+    const list_Items = numbers.map((number) => 
+        <ListItem key = {number.toString()}              
+        id = {number.id}
+        value = {number} />
+    );
+    return (
+        <ul>
+            {list_Items}
+        </ul>
+    );
+}
+
+function Blog(props) {
+    const posts = props.posts;
+    const sidebar = (
+        <ul>
+            {posts.map((post) => 
+                <li key = {post.id}> {post.title} </li>
+            )}
+        </ul>
+    );
+
+    const content = posts.map((post) => 
+        <div key = {post.id}>
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
+        </div>
+    );
+
+    return(
+        <div>
+            {sidebar}
+            <hr />
+            {content}
+        </div>
+    );
+}
+
+export default Blog;
