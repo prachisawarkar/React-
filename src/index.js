@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import LoginControl from './conditionalRendering';
-import LogInOut from './inline_cond_rendering';
+import List from './listitems';
 import * as serviceWorker from './serviceWorker';
 
-//const messages = ['React' , 'Re:React', 'Re:Re:React'];
+const numbers = [1,2,3,4,5];
 ReactDOM.render(
-  <LogInOut />,
+  <List numbers = {numbers} />,
   document.getElementById('root')
-);
+)
 
 
 //ReactDOM.render( AppTest, document.getElementById('component'));
