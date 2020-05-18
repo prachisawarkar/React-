@@ -4,7 +4,7 @@ class NameForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value : ' '
+            essay_value : 'Please write an essay about your favourite DOM element.'
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -12,12 +12,12 @@ class NameForm extends React.Component {
 
     handleChange(event) {
         this.setState({
-            value : event.target.value
+            essay_value : event.target.essay_value
         });
     }
 
     handleSubmit(event) {
-        alert("Name " + this.state.value + " is submitted.");
+        alert("Topic is: " + this.state.essay_value);
         event.preventDefault();
     }
 
@@ -25,9 +25,9 @@ class NameForm extends React.Component {
         return (
             <form onSubmit = {this.handleSubmit}>
                 <label>
-                    NAME:
-                    <input type = 'text' value = {this.state.value} onChange = {this.handleChange} />
-                </label> 
+                    TOPIC: <br />
+                    <textarea value = {this.state.essay_value} onChange = {this.handleChange} />
+                </label>
                 <input type = 'submit' value = 'Submit' />
             </form>
         );
