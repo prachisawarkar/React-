@@ -34,7 +34,7 @@ import React from 'react';
     }
 }*/
 
-class SelectForm extends React.Component {
+/*class SelectForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -77,6 +77,45 @@ class SelectForm extends React.Component {
             </form>
         );
     }
+}*/
+
+class Reservation extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isGoing : true,
+            numberOfGuest : 2
+        };
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.name === 'isGoing'?target.checked : target.value;
+        const name = target.name;
+        this.setState({
+            [name] : value
+        });
+    }
+
+    handleSubmit(event) {
+        alert('There are total ' + this.state.numberOfGuest + ' guests');
+    }
+
+    render() {
+        return (
+            <form onSubmit = {this.handleSubmit}>
+                <label> Is Going : <br /> 
+                    <input type = 'checkbox' name = 'isGoing' checked = {this.state.isGoing} onChange = {this.handleInputChange} />
+                </label> <br />
+                <label> Enter the number of guests : <br /> <br />
+                    <input type = 'number' name = 'numberOfGuest' onChange = {this.handleInputChange} value = {this.state.numberOfGuest} />
+                </label>
+                <input type = 'submit' value = 'Submit' />
+            </form>
+        );
+    }
 }
 
-export default SelectForm;
+export default Reservation;
