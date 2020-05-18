@@ -38,7 +38,9 @@ class SelectForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selected_value :  'coconut'
+            name : '',
+            email : '',
+            flavor :  'coconut'
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,19 +48,25 @@ class SelectForm extends React.Component {
 
     handleChange(event) {
         this.setState({
-            selected_value : event.target.value
+            [event.target.name] : event.target.value
         });
     }
 
     handleSubmit(event) {
-        alert('Your favourite flavor is : ' + this.state.selected_value);
+        alert(this.state.name + ' your email is : ' + this.state.email + ' your favourite flavor is : ' + this.state.flavor);
         event.preventDefault();
     }
     render() {
         return (
             <form onSubmit = {this.handleSubmit}>
+                <label> Name : <br /> <br />
+                    <input type = 'text' value =  {this.state.name} name = 'name' onChange = {this.handleChange} />       
+                </label> <br /> <br />
+                <label> Email : <br /> <br />
+                    <input type = 'email' value =  {this.state.email} name = 'email' onChange = {this.handleChange} />       
+                </label> <br /> <br />
                 <label> Pick your favorite flavor : <br /> <br />
-                    <select value = {this.state.selected_value} onChange = {this.handleChange} >
+                    <select name = 'flavor' value = {this.state.flavor} onChange = {this.handleChange} >
                         <option value = 'grapefruit'>Grapefruit</option>
                         <option value = 'lime'>Lime</option>
                         <option value = 'coconut'>Coconut</option>
