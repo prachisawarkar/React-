@@ -10,32 +10,31 @@ function BoilingVerdict(props) {
 class Calculator extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             temperature : ''
         };
         this.handleChange = this.handleChange.bind(this);
     }
-
-    handleChange(event) {
+    handleChange() {
         this.setState({
-            temperature : event.target.value
+            temperature : event.target.value;
         });
     }
-
+    
     render() {
         const temperature = this.state.temperature;
         return (
-            <form>
-                <fieldset>
-                    <legend>Temperature Calculator</legend>
-                    <label> Enter the temperature in celsius: <br />
-                        <input value = {temperature} onChange = {this.handleChange} />
-                        <BoilingVerdict celsius = {temperature} />
-                    </label>
-                </fieldset>
-            </form>
+            <fieldset>
+                <legend>Enter temperature in Celsius:</legend>
+                <input 
+                    value={temperature}          
+                    onChange={this.handleChange} 
+                />        
+                <BoilingVerdict         
+                    celsius={parseFloat(temperature)} />      
+            </fieldset>
         );
     }
 }
 
-export default Calculator;
+/*export default Calculator;*/
