@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 //import LoginControl from './conditionalRendering';
 //import Blog from './listitems';
-import Composition_App from './inheritance_and_composition';
+import WelcomeDialog1 from './inheritance_and_composition';
 import * as serviceWorker from './serviceWorker';
 
 //const numbers = [1,2,3,4,5];
@@ -16,7 +16,7 @@ import * as serviceWorker from './serviceWorker';
   {id: 2, title: 'Installation', content: 'You can install React from npm.'}
 ];*/
 ReactDOM.render(
-  <Composition_App />,
+  <WelcomeDialog1 />,
   document.getElementById('root')
 )
 
