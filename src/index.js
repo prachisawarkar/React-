@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 //import LoginControl from './conditionalRendering';
 //import Blog from './listitems';
-import WelcomeDialog1 from './inheritance_and_composition';
+import FilterableProductTable from './product_data_table_final';
 import * as serviceWorker from './serviceWorker';
 
 //const numbers = [1,2,3,4,5];
@@ -11,14 +11,16 @@ import * as serviceWorker from './serviceWorker';
   <NumberList numbers = {numbers} />,
   document.getElementById('root')
 )*/
+
 /*const posts = [
   {id :1, title: 'Hello World', content: 'Welcome to learning React!'},
   {id: 2, title: 'Installation', content: 'You can install React from npm.'}
 ];*/
-ReactDOM.render(
+
+/*ReactDOM.render(
   <WelcomeDialog1 />,
   document.getElementById('root')
-)
+)*/
 
 //ReactDOM.render( AppTest, document.getElementById('component'));
 // If you want your app to work offline and load faster, you can change
