@@ -17,14 +17,12 @@ class AppContext extends React.Component {
         super(props);
         this.state = {
             theme : themes.light,
-            toggleTheme : this.toggleTheme,
+            toggleTheme: this.toggleTheme,
         };
 
         this.toggleTheme = () => {
             this.setState(state => ({
-                theme : state.theme === themes.dark 
-                ? themes.light 
-                : themes.dark,
+                theme : state.theme === themes.dark ? themes.light : themes.dark,
             }));
         };
     }
@@ -39,7 +37,7 @@ class AppContext extends React.Component {
                     <ThemedButton />
                 </section>
             </div>*/
-            //passed the entire state to it
+            //passed the entire state
             <ThemeContext.Provider value = {this.state}>
                 <Content />
             </ThemeContext.Provider>
@@ -54,7 +52,6 @@ function Content() {
         </div>
     );
 }
-
 
 ReactDOM.render(
     <AppContext />, document.getElementById('root')
